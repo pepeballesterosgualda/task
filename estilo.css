@@ -1,0 +1,102 @@
+/* estilo.css */
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #E8E4DB; /* Beige claro */
+}
+
+header {
+  background-color: #5E765E; /* Verde oscuro */
+  color: #fff;
+  padding: 20px;
+}
+
+h1 {
+  margin: 0;
+}
+
+main {
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #D1CBC1; /* Beige claro */
+  border: 1px solid #999;
+  border-radius: 5px;
+}
+
+#word-display {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #383838; /* Marrón oscuro */
+}
+
+#guesses {
+  margin-bottom: 20px;
+}
+
+#guesses label {
+  display: block;
+  margin-bottom: 5px;
+  color: #4E5E4E; /* Verde oscuro */
+}
+
+#guesses input[type="text"] {
+  padding: 5px;
+  width: 100px;
+}
+
+#hangman {
+  margin-bottom: 20px;
+}
+
+#hangman img {
+  max-width: 100%;
+}
+
+#errors {
+  margin-bottom: 20px;
+}
+#errors p {
+  margin-bottom: 5px;
+  color: #4E5E4E; /* Verde oscuro */
+}
+
+#error-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#error-list li {
+  margin-bottom: 5px;
+  color: darkred; /* Rojo */
+}
+
+#message {
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+#letter-slots {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.letter-slot {
+  padding: 5px;
+  width: 30px;
+  text-align: center;
+  background-color: #F7F2E7; /* Beige */
+  color: #383838; /* Marrón oscuro */
+  font-weight: bold;
+}
+
+footer {
+  background-color: #5E765E; /* Verde oscuro */
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+}
