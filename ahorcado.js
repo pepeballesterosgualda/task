@@ -11,11 +11,14 @@ let errores = 0;
 
 // Inicializar el juego
 function inicializarJuego() {
-
+  document.getElementById("puntuacion2").value=parseInt(document.getElementById("puntuacion2").value)+parseInt(document.getElementById("puntuacion3").value);
   document.getElementById("jugar").disabled = true;
   document.getElementById("letter-input").disabled = false;
   document.getElementById("guess-button").disabled = false;
   //document.getElementById("jugar").disabled = false;
+
+//document.getElementById("puntuacion2").value="2";
+document.getElementById("puntuacion3").value="0";
 
   // Obtener una palabra aleatoria
   palabraSecreta = obtenerPalabraAleatoria();
@@ -71,12 +74,23 @@ function actualizarPalabraDisplay() {
 
 // Actualizar el estado del juego después de cada adivinanza
 function actualizarEstadoJuego(letra) {
-  if (palabraSecreta.includes(letra)) {
-    // La letra está en la palabra secreta
+
+// usamos extra para las vocales con tilde
+  let extra="1";  
+  if (letra=="a") extra="á";
+  if (letra=="e") extra="é";
+  if (letra=="i") extra="í";
+  if (letra=="o") extra="ó";
+  if (letra=="u") extra="ú";
+  
+  if (palabraSecreta.includes(letra) || palabraSecreta.includes(extra)) {   
+    // La letra está en la palabra secreta (con o sin tilde)
     mostrarLetraAdivinada(letra);
+    mostrarLetraAdivinada(extra);
 
     if (todasLetrasAdivinadas()) {
       // Todas las letras han sido adivinadas
+      document.getElementById("puntuacion3").value=parseInt(document.getElementById("puntuacion3").value)+10;
       mostrarMensaje("¡Enhorabuena! Has adivinado la palabra.");
       desactivarInput();
     }
@@ -85,7 +99,6 @@ function actualizarEstadoJuego(letra) {
     errores++;
     actualizarAhorcado();
     mostrarError(errores,letra);
-
     if (errores === 6) {
       // Se alcanzó el límite de errores
       mostrarMensaje("¡Has perdido! La palabra secreta era: " + palabraSecreta);
@@ -101,6 +114,7 @@ function mostrarLetraAdivinada(letra) {
   for (let i = 0; i < palabraSecreta.length; i++) {
     if (palabraSecreta[i] === letra) {
       letraSlots[i].value = letra;
+      document.getElementById("puntuacion3").value=parseInt(document.getElementById("puntuacion3").value)+1;
     }
   }
 }
@@ -128,6 +142,7 @@ function mostrarError(num_error, letra) {
   const errorItem = document.createElement("li");
   errorItem.textContent = num_error+': '+letra;
   errorList.appendChild(errorItem);
+  document.getElementById("puntuacion3").value=parseInt(document.getElementById("puntuacion3").value)-1;
 }
 
 // Mostrar un mensaje en el juego
