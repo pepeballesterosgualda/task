@@ -14,8 +14,11 @@ header {
 }
 
 h1 {
-  margin: 0;
+  margin: 0; display:inline-block;
 }
+
+.puntos {float: right;margin: 10px;}
+#puntuacion3 {margin: 5px;}
 
 main {
   max-width: 600px;
