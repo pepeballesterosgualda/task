@@ -10,15 +10,15 @@ body {
 header {
   background-color: #5E765E; /* Verde oscuro */
   color: #fff;
-  padding: 20px;
+  padding: 30px;
 }
 
 h1 {
   margin: 0; display:inline-block;
 }
 
-.puntos {float: right;margin: 10px;}
-#puntuacion3 {margin: 5px;}
+.puntos {float: right;margin: 5px;}
+#puntuacion3 {margin: 0px;}
 
 main {
   max-width: 600px;
