@@ -11,17 +11,16 @@
 <body>
   <header>
     <h1>Juego del Ahorcado</h1>
-<input type="text" class="puntos" id="puntuacion2" value="0" maxlenght="3" size="3" disabled>
+    <input type="text" class="puntos" id="puntuacion2" value="0" maxlenght="3" size="3" disabled>
     <label class="puntos" id="puntuacion1" >Puntuación Total: </label>
-
   </header>
 
   <main>
     <div id="word-display"></div>
     <div id="guesses">
       <label for="letter-input">Introduce una letra:</label>
-      <input type="text" id="letter-input" maxlength="1" size="1">
-      <button id="guess-button">Adivinar</button>
+      <input type="text" id="letter-input" maxlength="1" size="1" autofocus>
+      <button id="guess-button" hidden >Adivinar</button>
       <input id="jugar" type="button" value="Siguiente">
     <input type="text" class="puntos" id="puntuacion3" value="0" maxlenght="3" size="3" disabled>
     <label class="puntos" id="puntuacion4">Puntos: </label>
@@ -34,7 +33,7 @@
     <div id="errors">
       <p>Palabras erróneas introducidas (máximo 6 errores):</p>
       <ul id="error-list"></ul>
-      <p>1 punto por letra acertada, -1 por letra fallada y 10 por palabra adivinada</p>
+      <p>1 punto por letra acertada, -1 por letra fallada </br> 10 por palabra adivinada y -20 por palabra no adivinada</p>
     </div>
 
     <div id="message"></div>
